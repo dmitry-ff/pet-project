@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import App from './components/App'
+import App from './pages/App'
 import {
     BrowserRouter,
     Route,
@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import WeatherCheck from "./pages/WeatherCheck";
 import Navigation from "./components/Navigation";
+import './css/Global.css'
 
 
 ReactDOM.render(

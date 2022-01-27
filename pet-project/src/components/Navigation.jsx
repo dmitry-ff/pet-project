@@ -9,7 +9,7 @@ function Navigation() {
         <div className='navigationDiv'>
             <nav className='navbar'>
                 <Link to='/' >Home</Link>
-                <Link to='weather-checker' >Weather</Link>
+                <Link to='weather-check' >Weather</Link>
             </nav>
             <Outlet />
         </div>

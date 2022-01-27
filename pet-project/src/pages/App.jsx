@@ -1,8 +1,8 @@
-import BarChart from "./BarChart";
+import BarChart from "../components/BarChart";
 import React from 'react';
 import { UserData } from '../data/Data'
-import LineChart from "./LineChart";
-import PieChart from "./PieChart";
+import LineChart from "../components/LineChart";
+import PieChart from "../components/PieChart";
 import { Chart as ChartJS } from 'chart.js/auto';
 import '../css/App.css';
 
