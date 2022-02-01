@@ -4,12 +4,13 @@ import WeatherData from '../components/WeatherData'
 
 function WeatherCheck() {
 
+    const [url, setUrl] = React.useState('');
     const [press, setPress] = React.useState(false);
-    const inputEl = React.useRef(null);
+    const inputEl = React.useRef('');
 
     const checkButtonHandler = (event) => {
         event.preventDefault();
-        console.log(inputEl.current.value);
+        setUrl(url => url = `http://api.weatherapi.com/v1/current.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&aqi=no`)
         setPress(true);
     };
 
@@ -20,7 +21,7 @@ function WeatherCheck() {
                 <input ref={inputEl} type="text" placeholder='...maybe in Paris?'></input>
                 <input type="submit" onClick={checkButtonHandler} value="Check"></input>
             </form>
-            {press && <WeatherData q={inputEl.current.value} />}
+            {press && <WeatherData q={inputEl.current.value} apiURL={url} />}
             <span id="clue">Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a></span>
 
         </div>
