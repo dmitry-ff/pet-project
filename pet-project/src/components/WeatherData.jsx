@@ -32,6 +32,8 @@ function WeatherData(props) {
                 buf = _.slice(Object.entries(res.data.current), 4, 5);
                 setData(data => [...data, ...buf]);
 
+                setData(data => _.flatten(data))
+
                 setLoading(false);
                 return res;
             })

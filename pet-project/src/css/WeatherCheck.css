@@ -1,9 +1,13 @@
+body{
+    background-color: rgb(251,251,251);
+}
 .weather{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 14px;
+    height: 100%;
 }
 .weatherForm{
     display: flex;
@@ -41,6 +45,7 @@ h2{
     outline: 1px solid rgb(219, 219, 219);
     width: 500px;
     transition: box-shadow .4s;
+    background-color: rgb(251,251,251);
 }
 
 .weatherForm > input[type="text"]:focus{
