@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 14px;
 }
 .weatherForm{
     display: flex;
@@ -16,6 +17,9 @@ h2{
     text-align: center;
     font-family: 'Caveat', cursive;
     color: rgb(66, 66, 66);
+}
+.weatherForm > input {
+    font-size: 1.5em;
 }
 
 .weatherForm > input[type="text"],.weatherForm > input[type="submit"] {

@@ -16,7 +16,7 @@ ReactDOM.render(
         <Navigation />
         <Routes>
             <Route path='/' element={<App />} />
-            <Route path='weather-check' element={<WeatherCheck />} />
+            <Route path='weather' element={<WeatherCheck />} />
         </Routes>
     </BrowserRouter>,
     document.getElementById('root')
