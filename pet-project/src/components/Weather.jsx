@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import '../css/WeatherData.css'
-import { WEEK_DAYS } from '../CONST/Const'
+import { WEEK_S } from '../CONST/Const'
 
 function Weather({ loading, nameHead, data }) {
 
@@ -9,7 +9,7 @@ function Weather({ loading, nameHead, data }) {
     // setLocaldata(data[0].day);
     // console.log()
     // let { avgtemp_c, condition: { icon, text }, daily_chance_of_rain, daily_chance_of_snow, maxtemp_c, maxwind_kph, mintemp_c } = localData;
-
+    console.log(data, nameHead);
     return <>
         {!loading && <div className='weatherData'>
             <div className='townName'>Weather in <b>{nameHead}</b></div>
@@ -39,7 +39,9 @@ function Weather({ loading, nameHead, data }) {
                     {
                         _.map(data, (item, index) =>
                             <div className='card' key={index}>
-                                <div className='day'>{'today'}</div>
+                                <div className='day'>{index === 0 ?
+                                    'Today'
+                                    : `${WEEK_S[new Date(item.date).getDay()]}, ${new Date(item.date).getDate()}`}</div>
                                 <div className='weatherCard'>
                                     <div className='mx'>
                                         <span className='mx-m'>{item.day.maxtemp_c > 0 ? '+' + _.floor(item.day.maxtemp_c) : _.floor(item.day.maxtemp_c)}°</span>
