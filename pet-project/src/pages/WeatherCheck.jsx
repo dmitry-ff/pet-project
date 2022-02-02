@@ -10,7 +10,9 @@ function WeatherCheck() {
 
     const checkButtonHandler = (event) => {
         event.preventDefault();
-        setUrl(url => url = `http://api.weatherapi.com/v1/current.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&aqi=no`)
+
+        setUrl(url => url =
+            `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&days=4&aqi=no&alerts=no`)
         setPress(true);
     };
 
