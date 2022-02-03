@@ -3,7 +3,6 @@ import { Link, Outlet } from 'react-router-dom';
 import '../css/Navigation.css'
 
 
-
 function Navigation() {
     return (
         <div className='navigationDiv'>

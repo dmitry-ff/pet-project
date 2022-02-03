@@ -4,7 +4,6 @@ import '../css/App.css';
 import { UserData } from "../data/Data";
 import { Line, Bar, Pie, Doughnut } from 'react-chartjs-2';
 
-
 const App = () => {
     const [show, setShow] = React.useState(true);
     const [userData, setUserData] = React.useState(UserData)

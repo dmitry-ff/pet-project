@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/WeatherCheck.css';
 import WeatherData from '../components/WeatherData'
-
+import { Button, Card } from '@mui/material';
 function WeatherCheck() {
 
     const [url, setUrl] = React.useState('');
@@ -21,7 +21,8 @@ function WeatherCheck() {
             <form className='weatherForm'>
                 <h2>Where you want to check the weather</h2>
                 <input ref={inputEl} type="text" placeholder='...maybe in Paris?'></input>
-                <input type="submit" onClick={checkButtonHandler} value="Check"></input>
+                <Card>aasdgasdhgasdfasdjfasj;ldfjls;adf</Card>
+                <Button color='success' onClick={checkButtonHandler} variant="outlined">Press</Button>
             </form>
             {press && <WeatherData apiURL={url} />}
             <span id="clue">Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a></span>
