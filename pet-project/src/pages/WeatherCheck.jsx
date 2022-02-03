@@ -10,7 +10,7 @@ function WeatherCheck() {
 
     const checkButtonHandler = (event) => {
         event.preventDefault();
-
+        //При смене погодного api, добавить возможность выбора количества дней 
         setUrl(url => url =
             `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&days=3&aqi=no&alerts=no`)
         setPress(true);

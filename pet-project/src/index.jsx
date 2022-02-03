@@ -9,6 +9,8 @@ import {
 import WeatherCheck from "./pages/WeatherCheck";
 import Navigation from "./components/Navigation";
 import './css/Global.css'
+import { Chart as ChartJS } from 'chart.js/auto';
+
 
 
 ReactDOM.render(

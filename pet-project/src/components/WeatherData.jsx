@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 import Weather from './Weather';
-
+import TemperatureChart from './TemperatureChart';
 
 function WeatherData(props) {
     const [data, setData] = React.useState([]);
@@ -27,10 +27,19 @@ function WeatherData(props) {
             })
     }, [props.apiURL])
 
-    return <div>
-        {loading && <span>Loading</span>}
-        {!loading && <Weather loading={loading} nameHead={data[0][1]} data={data.slice(1)} />}
-    </div>
+    return (
+        <>
+            {loading && <span>Loading</span>}
+            {!loading
+                && <div>
+                    <Weather loading={loading} nameHead={data[0][1]} data={data.slice(1)} />
+                    <TemperatureChart loading={loading} chartData={data.slice(1)} />
+                </div>
+
+            }
+        </>
+    )
 };
+
 
 export default WeatherData;

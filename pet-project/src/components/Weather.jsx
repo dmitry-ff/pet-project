@@ -53,6 +53,7 @@ function Weather({ loading, nameHead, data }) {
         </div>
         }
     </>
+
 }
 
 export default Weather;

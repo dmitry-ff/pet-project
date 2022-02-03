@@ -27,7 +27,7 @@
     align-items: flex-end;
     
 }
-.column-2{
+.column-2, .column-4{
     display: flex;
     flex-direction: column;
 }
@@ -39,10 +39,6 @@
 }
 .deg{
     font-size: 3em;
-}
-.column-4 {
-    display: flex;
-    flex-direction: column;
 }
 .snow{
     align-self: flex-end;
@@ -102,3 +98,6 @@
 .mx-m{
     font-size:1.5em;
 }
+
+/*Chart*/
+

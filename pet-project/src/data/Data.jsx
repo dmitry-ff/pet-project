@@ -1,32 +1,26 @@
-export const UserData = [
-    {
-        id: 1,
-        year: 2016,
-        userGain: 80000,
-        userLost: 843,
-    },
-    {
-        id: 2,
-        year: 2017,
-        userGain: 12300,
-        userLost: 225,
-    },
-    {
-        id: 3,
-        year: 2018,
-        userGain: 45620,
-        userLost: 126,
-    },
-    {
-        id: 4,
-        year: 2019,
-        userGain: 78888,
-        userLost: 823,
-    },
-    {
-        id: 5,
-        year: 2020,
-        userGain: 82350,
-        userLost: 216,
-    },
-]
+export const UserData = {
+    labels: ['Red', 'Blue', 'Yellow',],
+    datasets: [
+        {
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
+        },
+    ],
+}
