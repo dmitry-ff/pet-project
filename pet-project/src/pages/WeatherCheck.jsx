@@ -23,7 +23,7 @@ function WeatherCheck() {
                 <input ref={inputEl} type="text" placeholder='...maybe in Paris?'></input>
                 <input type="submit" onClick={checkButtonHandler} value="Check"></input>
             </form>
-            {press && <WeatherData q={inputEl.current.value} apiURL={url} />}
+            {press && <WeatherData apiURL={url} />}
             <span id="clue">Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a></span>
 
         </div>

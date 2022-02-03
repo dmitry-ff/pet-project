@@ -5,11 +5,6 @@ import { WEEK_S } from '../CONST/Const'
 
 function Weather({ loading, nameHead, data }) {
 
-    // const [localData, setLocaldata] = React.useState({})
-    // setLocaldata(data[0].day);
-    // console.log()
-    // let { avgtemp_c, condition: { icon, text }, daily_chance_of_rain, daily_chance_of_snow, maxtemp_c, maxwind_kph, mintemp_c } = localData;
-    console.log(data, nameHead);
     return <>
         {!loading && <div className='weatherData'>
             <div className='townName'>Weather in <b>{nameHead}</b></div>

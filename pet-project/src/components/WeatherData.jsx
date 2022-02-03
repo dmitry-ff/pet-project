@@ -9,6 +9,7 @@ function WeatherData(props) {
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
+        setLoading(true);
         const source = axios.CancelToken.source();
         axios.get(props.apiURL, { cancelToken: source.token })
             .then(res => {
@@ -16,12 +17,13 @@ function WeatherData(props) {
                 setData(_.slice(Object.entries(res.data.location), 0, 1));
                 setData(data => [...data, ...items]);
                 setLoading(false);
+                return res;
             })
-            .then(() => {
+            .then((res) => {
                 source.cancel();
             })
             .catch(error => {
-                console.log(error);
+                console.log(error)
             })
     }, [props.apiURL])
 
