@@ -32,8 +32,8 @@ function WeatherData(props) {
             {loading && <span>Loading</span>}
             {!loading
                 && <div>
-                    <Weather loading={loading} nameHead={data[0][1]} data={data.slice(1)} />
-                    <TemperatureChart loading={loading} chartData={data.slice(1)} />
+                    <Weather loading={loading} nameHead={_.head(data)[1]} data={_.slice(data, 1)} />
+                    <TemperatureChart loading={loading} chartData={_.slice(data, 1)} />
                 </div>
 
             }

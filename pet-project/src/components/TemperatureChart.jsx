@@ -18,7 +18,16 @@ function TemperatureChart({ loading, chartData }) {
                 }),
                 backgroundColor: 'rgba(222, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 3,
+                borderWidth: 2,
+            },
+            {
+                label: 'avg t, °C',
+                data: _.map(chartData, item => {
+                    return (item.day.maxtemp_c + item.day.mintemp_c) / 2;
+                }),
+                backgroundColor: 'rgba(48, 207, 113,0.2)',
+                borderColor: 'rgba(48, 207, 113,1)',
+                borderWidth: 2,
             },
             {
                 label: 'min t, °C',
@@ -27,7 +36,7 @@ function TemperatureChart({ loading, chartData }) {
                 }),
                 backgroundColor: 'rgba(1, 99, 132, 0.2)',
                 borderColor: 'rgba(1, 99, 132, 1)',
-                borderWidth: 3,
+                borderWidth: 2,
             },
         ],
     });
