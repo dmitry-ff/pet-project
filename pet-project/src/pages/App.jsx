@@ -8,7 +8,7 @@ const App = () => {
     const [show, setShow] = React.useState(true);
     const [userData, setUserData] = React.useState(UserData)
 
-    const showHandler = () => {
+    const showHandler = (e) => {
         setShow(show => !show);
     };
     return (

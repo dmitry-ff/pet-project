@@ -6,9 +6,10 @@ import { Line } from 'react-chartjs-2';
 
 function TemperatureChart({ loading, chartData }) {
 
+    console.log(chartData)
     const [data, setData] = React.useState({
         labels: _.map(chartData, item => {
-            return `${MONTH_S[new Date(item.date).getMonth()]}, ${new Date(item.date).getDay()}`
+            return `${MONTH_S[new Date(item.date).getMonth()]}, ${new Date(item.date).getDate()}`
         }),
         datasets: [
             {
@@ -41,7 +42,8 @@ function TemperatureChart({ loading, chartData }) {
         ],
     });
 
-    return <>{!loading && <Line data={data} />}</>
+    return <>{!loading && <Line data={data} />
+    }</>
 }
 
 export default TemperatureChart;

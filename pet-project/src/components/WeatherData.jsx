@@ -3,6 +3,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import Weather from './Weather';
 import TemperatureChart from './TemperatureChart';
+import { CircularProgress, Box } from '@mui/material'
 
 function WeatherData(props) {
     const [data, setData] = React.useState([]);
@@ -16,7 +17,7 @@ function WeatherData(props) {
                 let items = res.data.forecast.forecastday;
                 setData(_.slice(Object.entries(res.data.location), 0, 1));
                 setData(data => [...data, ...items]);
-                setLoading(false);
+                setTimeout(() => setLoading(false), 1000)
                 return res;
             })
             .then((res) => {
@@ -29,9 +30,14 @@ function WeatherData(props) {
 
     return (
         <>
-            {loading && <span>Loading</span>}
+            {loading &&
+
+                <Box sx={{ display: 'flex' }}>
+                    <CircularProgress />
+                </Box>}
             {!loading
-                && <div>
+                &&
+                <div>
                     <Weather loading={loading} nameHead={_.head(data)[1]} data={_.slice(data, 1)} />
                     <TemperatureChart loading={loading} chartData={_.slice(data, 1)} />
                 </div>

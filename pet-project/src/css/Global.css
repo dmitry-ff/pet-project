@@ -1,8 +1,11 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
+
+
 }
-#root{
- font-family: "Open-sans", sans-serif;   
- 
+body{
+    font-family: 'Roboto';
+    background-color: rgb(255, 255, 255);
 }

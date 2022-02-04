@@ -1,33 +1,73 @@
 import React from 'react';
-import '../css/WeatherCheck.css';
 import WeatherData from '../components/WeatherData'
-import { Button, Card } from '@mui/material';
+import { Button, Input, Box, Link } from '@mui/material';
+import styled from '@emotion/styled';
+
+
+const Heading = styled.h2`
+    margin-top:50px;
+    font-size: 2.5em;
+    text-align: center;
+    color: rgb(66, 66, 66);
+`
+
 function WeatherCheck() {
 
     const [url, setUrl] = React.useState('');
     const [press, setPress] = React.useState(false);
     const inputEl = React.useRef('');
 
-    const checkButtonHandler = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        //При смене погодного api, добавить возможность выбора количества дней 
         setUrl(url => url =
-            `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&days=3&aqi=no&alerts=no`)
+            `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&days=3&aqi=no&alerts=no`);
+        console.log(inputEl.current.value);
         setPress(true);
-    };
-
+    }
     return (
-        <div className='weather'>
-            <form className='weatherForm'>
-                <h2>Where you want to check the weather</h2>
-                <input ref={inputEl} type="text" placeholder='...maybe in Paris?'></input>
-                <Card>aasdgasdhgasdfasdjfasj;ldfjls;adf</Card>
-                <Button color='success' onClick={checkButtonHandler} variant="outlined">Press</Button>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            width: "100%",
+        }}>
+            <form className='weatherForm' onSubmit={handleSubmit}>
+                <Heading>Where you want to check the weather</Heading>
+                <Box sx={{
+                    width: '100%',
+                    height: 230,
+                    mt: 3,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-evenly',
+
+                }}>
+                    <Input
+                        margin='dense'
+                        fullWidth={true}
+                        inputRef={inputEl}
+                        type="text"
+                        placeholder='...maybe in Paris?' />
+                    <Button
+                        sx={{
+                            width: 'fit-content',
+                            alignSelf: 'center',
+                        }}
+                        margin='normal'
+                        color='primary'
+                        variant="contained">
+                        Check weather
+                    </Button>
+                </Box>
             </form>
             {press && <WeatherData apiURL={url} />}
-            <span id="clue">Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a></span>
-
-        </div>
+            <span>
+                Powered by
+                <Link
+                    href="https://www.weatherapi.com/"> WeatherAPI.com
+                </Link>
+            </span>
+        </Box>
     );
 }
 
