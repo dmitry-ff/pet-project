@@ -8,7 +8,7 @@ function Navigation() {
         <>
 
             <NavigationDiv>
-                <img src={require('../img/dog.svg')} alt='dog'></img>
+                <img src='https://www.iconfinder.com/icons/8542014/dog_puppy_pet_icon' alt='dog'></img>
                 <Navbar>
                     <Link to='/'>Home</Link>
                     <Link to='weather' >Weather</Link>

@@ -1,8 +1,16 @@
 import React from 'react';
 import { Chart as ChartJS } from 'chart.js/auto';
-import '../css/App.css';
 import { UserData } from "../data/Data";
 import { Line, Bar, Pie, Doughnut } from 'react-chartjs-2';
+import styled from '@emotion/styled';
+
+
+const AppCharts = styled.div`
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+`
 
 const App = () => {
     const [show, setShow] = React.useState(true);
@@ -22,12 +30,12 @@ const App = () => {
             }
             {
                 show &&
-                < div className="AppFlex">
+                <AppCharts>
                     <Bar data={userData} />
                     <Line data={userData} />
                     <Pie data={userData} />
                     <Doughnut data={userData} />
-                </div>
+                </AppCharts>
             }
         </>
     );

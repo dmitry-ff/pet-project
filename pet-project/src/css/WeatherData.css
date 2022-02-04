@@ -1,71 +1,4 @@
-.weatherData{
-    margin-bottom: 35px;
-    border-radius: 10px;
-    transition: box-shadow 0.4s;
-    padding:20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(219, 219, 219, 0.596);
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    justify-content: space-between;
-}
-.townName{
-    font-size: 1.5em;
-}
-.weatherToday{
-    display: flex;
-    align-items:flex-end ;
-    justify-content: space-between;
-}
-.weatherToday >div{
-    margin-right: 20px;
-}
 
-.column-1{
-    display: flex;
-    align-items: flex-end;
-    
-}
-.column-2, .column-4{
-    display: flex;
-    flex-direction: column;
-}
-.column-2 .minmax{
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
-
-}
-.deg{
-    font-size: 3em;
-}
-.snow{
-    align-self: flex-end;
-}
-.snow,.rain{
-    position: relative;
-}
-.snow::after{
-    vertical-align: bottom;
-    background-image: url(../img/8664916_snowflake_icon.svg);
-}
-.rain::after{
-    vertical-align: top;
-    background-image: url(../img/7795646_weather_cloud_rain_icon.svg);
-}
-
-.rain::after,.snow::after{
-    position: absolute;
-    content: "";
-    right:-20px;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    padding: 0;
-    
-}
 
 /*Card*/
 .weatherWeek{
@@ -74,9 +7,6 @@
 }
 
 .card {
-    width: 100%;
-    max-width: 150px;
-    align-content: stretch;
     border-radius: 15px;
     padding: 15px 20px;
     box-shadow: 5px 5px 10px rgba(211, 211, 211, 0.712);

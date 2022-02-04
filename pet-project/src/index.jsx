@@ -8,18 +8,28 @@ import {
 } from 'react-router-dom';
 import WeatherCheck from "./pages/WeatherCheck";
 import Navigation from "./components/Navigation";
-import './css/Global.css'
 import { Chart as ChartJS } from 'chart.js/auto';
-
+import { css, Global } from '@emotion/react';
 
 
 ReactDOM.render(
-    <BrowserRouter >
-        <Navigation />
-        <Routes>
-            <Route path='/' element={<App />} />
-            <Route path='weather' element={<WeatherCheck />} />
-        </Routes>
-    </BrowserRouter>,
+    <>
+        <Global styles={css`
+            body{
+                margin: 0;
+                box-sizing: border-box;
+                font-family: 'Roboto';
+                background-color: rgb(255, 255, 255);
+            }
+        `} />
+        <BrowserRouter >
+            <Navigation />
+            <Routes>
+                <Route path='/' element={<App />} />
+                <Route path='weather' element={<WeatherCheck />} />
+            </Routes>
+        </BrowserRouter>
+
+    </>,
     document.getElementById('root')
 );

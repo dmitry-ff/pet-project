@@ -62,9 +62,9 @@ function WeatherCheck() {
             </form>
             {press && <WeatherData apiURL={url} />}
             <span>
-                Powered by
+                {'Powered by '}
                 <Link
-                    href="https://www.weatherapi.com/"> WeatherAPI.com
+                    href="https://www.weatherapi.com/">WeatherAPI.com
                 </Link>
             </span>
         </Box>
