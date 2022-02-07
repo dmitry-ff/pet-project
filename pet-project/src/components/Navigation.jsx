@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { NavigationDiv, Navbar, Logo, FakeElem } from '../Styled/navigation';
+import { NavigationDiv, Navbar, Logo, FakeElem } from '../Style/navigation';
+import dog from '../img/dogg.svg'
 
 
 function Navigation() {
@@ -8,7 +9,11 @@ function Navigation() {
         <>
 
             <NavigationDiv>
-                <img src='https://www.iconfinder.com/icons/8542014/dog_puppy_pet_icon' alt='dog'></img>
+                <Logo >
+                    <h2>PET</h2>
+                    <img src={dog} alt='dog'></img>
+                    <h2>PROJECT</h2>
+                </Logo>
                 <Navbar>
                     <Link to='/'>Home</Link>
                     <Link to='weather' >Weather</Link>
