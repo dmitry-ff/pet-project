@@ -2,9 +2,7 @@ import styled from '@emotion/styled';
 
 export const NavigationDiv = styled.div`
     display: flex;
-    margin:0 auto;
-    padding:0 15px;
-    width: 100%;
+    padding:0 10px;    
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
@@ -14,7 +12,7 @@ export const NavigationDiv = styled.div`
 
 export const Navbar = styled.nav`
     display:flex;
-        &>a{
+        & a{
         color: rgb(128, 122, 122);
         padding: 25px 20px;
         text-decoration: none;
