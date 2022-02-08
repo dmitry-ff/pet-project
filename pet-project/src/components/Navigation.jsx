@@ -18,7 +18,6 @@ function Navigation() {
                     <Link to='/'>Home</Link>
                     <Link to='weather' >Weather</Link>
                 </Navbar>
-                <Outlet />
                 <FakeElem />
             </NavigationDiv>
         </>
