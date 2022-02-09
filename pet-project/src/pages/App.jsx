@@ -1,46 +1,46 @@
 import React from 'react';
-import { Chart as ChartJS } from 'chart.js/auto';
 import { UserData } from "../data/Data";
-import { Line, Bar, Pie, Doughnut } from 'react-chartjs-2';
 import styled from '@emotion/styled';
 
-
-const AppCharts = styled.div`
-    width: 500px;
-    margin: auto;
-    display: flex;
+import { getCharts } from '../data/Charts';
+import _ from 'lodash';
+import { NavLink, Outlet } from 'react-router-dom';
+const ChartsNav = styled.div`
+    width:fit-content;
+    display: inline-block;
+    vertical-align:top;
     flex-direction: column;
-`
+        &>a{
+        color: rgb(128, 122, 122);
+        width:120px;
+        padding: 10px 20px;
+        text-decoration: none;
+            &:hover{
+                background-color: rgba(238, 237, 237, 0.548);
+    };
+`;
 
 const App = () => {
-    const [show, setShow] = React.useState(true);
-    const [userData, setUserData] = React.useState(UserData)
+    const charts = getCharts();
 
-    const showHandler = (e) => {
-        setShow(show => !show);
-    };
     return (
         <>
-            <div >
-                <button onClick={showHandler}>Show</button>
-            </div>
-            {
-                !show &&
-                <div>Нечего показать</div>
-            }
-            {
-                show &&
-                <AppCharts>
-                    <Bar data={userData} />
-                    <Line data={userData} />
-                    <Pie data={userData} />
-                    <Doughnut data={userData} />
-                </AppCharts>
-            }
+            <ChartsNav>
+                {
+                    _.map(charts, (item, index) => <NavLink
+                        style={({ isActive }) => ({
+                            display: "block",
+                            margin: "1rem 0",
+                            color: isActive ? "red" : ""
+                        })}
+                        key={index}
+                        to={item.name}>{item.name}</NavLink>)
+                }
+            </ChartsNav>
+            <Outlet />
         </>
     );
 }
-
 
 
 

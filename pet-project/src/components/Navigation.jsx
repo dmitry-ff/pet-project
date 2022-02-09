@@ -7,7 +7,6 @@ import dog from '../img/dogg.svg'
 function Navigation() {
     return (
         <>
-
             <NavigationDiv>
                 <Logo >
                     <h2>PET</h2>
@@ -20,6 +19,7 @@ function Navigation() {
                 </Navbar>
                 <FakeElem />
             </NavigationDiv>
+            <Outlet />
         </>
     );
 }
