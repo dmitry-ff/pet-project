@@ -12,7 +12,8 @@ export const WeatherData = styled.div`
     flex-direction: column;
     align-content:center;
     height: 300px;
-    width:600px;
+    width:max-content;
+    min-width:600px;
     justify-content: space-between;
     >span{
         font-size:1.5em;

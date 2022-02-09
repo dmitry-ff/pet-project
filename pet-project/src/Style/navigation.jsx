@@ -15,6 +15,9 @@ export const Logo = styled.div`
     img{
         width:64px;
     }
+
+        text-decoration:none;
+
 `
 
 

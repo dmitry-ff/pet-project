@@ -8,14 +8,16 @@ function Navigation() {
     return (
         <>
             <NavigationDiv>
-                <Logo >
-                    <h2>PET</h2>
-                    <img src={dog} alt='dog'></img>
-                    <h2>PROJECT</h2>
-                </Logo>
+                <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
+                    <Logo >
+                        <h2>PET</h2>
+                        <img src={dog} alt='dog'></img>
+                        <h2>PROJECT</h2>
+                    </Logo>
+                </Link>
                 <Navbar>
-                    <Link to='/'>Home</Link>
-                    <Link to='weather' >Weather</Link>
+                    <Link to='Charts'>Charts</Link>
+                    <Link to='Weather' >Weather</Link>
                 </Navbar>
                 <FakeElem />
             </NavigationDiv>

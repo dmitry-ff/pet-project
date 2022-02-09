@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import App from './pages/App'
+import AllCharts from './pages/AllCharts'
 import {
     BrowserRouter,
     Route,
@@ -22,6 +22,17 @@ const StyledComp = styled.div`
     padding:1rem;
     
 `;
+const CenteredHeader = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:90vh;
+    h2{
+        font-size:12.5em;
+        margin:0;
+        color:rgb(60,57,57);
+    }
+`
 
 ReactDOM.render(
     <>
@@ -36,15 +47,24 @@ ReactDOM.render(
         <BrowserRouter >
             <Navigation />
             <Routes>
-                <Route path='/' element={<App />} >
+                <Route path='/' element={
+                    <CenteredHeader>
+                        <h2>Home</h2>
+                    </CenteredHeader>
+                } >
+                </Route>
+                <Route path='Charts' element={<AllCharts />} >
                     <Route
                         index
                         element={<StyledComp>Select a chart!</StyledComp>}
                     />
+
                     <Route path='LineChart' element={<LineChart userData={UserData} />} />
                     <Route path='PieChart' element={<PieChart userData={UserData} />} />
                     <Route path='DoughnutChart' element={<DoughnutChart userData={UserData} />} />
                     <Route path='BarChart' element={<BarChart userData={UserData} />} />
+
+
 
                 </Route>
                 <Route path='weather' element={<WeatherCheck />} />

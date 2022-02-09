@@ -1,8 +1,6 @@
 import React from 'react';
-import { UserData } from "../data/Data";
 import styled from '@emotion/styled';
-
-import { getCharts } from '../data/Charts';
+import { CHART_NAMES } from '../CONST/Const'
 import _ from 'lodash';
 import { NavLink, Outlet } from 'react-router-dom';
 const ChartsNav = styled.div`
@@ -20,21 +18,19 @@ const ChartsNav = styled.div`
     };
 `;
 
-const App = () => {
-    const charts = getCharts();
-
+const AllCharts = () => {
     return (
         <>
             <ChartsNav>
                 {
-                    _.map(charts, (item, index) => <NavLink
+                    _.map(CHART_NAMES, (item, index) => <NavLink
                         style={({ isActive }) => ({
                             display: "block",
                             margin: "1rem 0",
                             color: isActive ? "red" : ""
                         })}
                         key={index}
-                        to={item.name}>{item.name}</NavLink>)
+                        to={item}>{item}</NavLink>)
                 }
             </ChartsNav>
             <Outlet />
@@ -44,4 +40,4 @@ const App = () => {
 
 
 
-export default App;
+export default AllCharts;

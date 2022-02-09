@@ -21,6 +21,7 @@ export const UserData = {
                 'rgba(255, 159, 64, 1)',
             ],
             borderWidth: 1,
+            hoverOffset: 3,
         },
     ],
 }
