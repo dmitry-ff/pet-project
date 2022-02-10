@@ -16,6 +16,8 @@ import DoughnutChart from "./Charts/DoughnutChart";
 import BarChart from "./Charts/BarChart";
 import { UserData } from './data/Data';
 import styled from '@emotion/styled'
+import ReactFeatures from "./components/ReactFeatures";
+import Modal from "./components/Modal";
 
 const StyledComp = styled.div`
     display:inline-block;
@@ -36,6 +38,7 @@ const CenteredHeader = styled.div`
 
 ReactDOM.render(
     <>
+        <Modal />
         <Global styles={css`
             body{
                 margin: 0;
@@ -68,6 +71,7 @@ ReactDOM.render(
 
                 </Route>
                 <Route path='weather' element={<WeatherCheck />} />
+                <Route path='reactfeatures' element={<ReactFeatures />} />
                 <Route
                     path="*"
                     element={

@@ -2,8 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import { WEEK_S } from '../CONST/Const'
 import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../Style/weather'
-import { jsx, css } from '@emotion/react'
-import styled from '@emotion/styled';
+
 
 function Weather({ loading, nameHead, data }) {
 

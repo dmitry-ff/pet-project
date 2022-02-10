@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { NavigationDiv, Navbar, Logo, FakeElem } from '../Style/navigation';
+import { NavigationDiv, Navbar, Logo } from '../Style/navigation';
 import dog from '../img/dogg.svg'
 
 
@@ -18,8 +18,8 @@ function Navigation() {
                 <Navbar>
                     <Link to='Charts'>Charts</Link>
                     <Link to='Weather' >Weather</Link>
+                    <Link to="reactfeatures">React Features</Link>
                 </Navbar>
-                <FakeElem />
             </NavigationDiv>
             <Outlet />
         </>

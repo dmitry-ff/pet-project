@@ -15,14 +15,15 @@ function WeatherCheck() {
 
     const [url, setUrl] = React.useState('');
     const [press, setPress] = React.useState(false);
-    const inputEl = React.useRef('');
+    const [InpValue, setValue] = React.useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         setUrl(url => url =
-            `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${inputEl.current.value}&days=3&aqi=no&alerts=no`);
-        console.log(inputEl.current.value);
+            `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${InpValue}&days=3&aqi=no&alerts=no`);
         setPress(true);
+        setValue('')
     }
     return (
         <Box sx={{
@@ -45,7 +46,8 @@ function WeatherCheck() {
                     <Input
                         margin='dense'
                         fullWidth={true}
-                        inputRef={inputEl}
+                        value={InpValue}
+                        onChange={(e) => setValue(e.target.value)}
                         type="text"
                         placeholder='...maybe in Paris?' />
                     <Button

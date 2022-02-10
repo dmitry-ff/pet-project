@@ -49,19 +49,6 @@ export const SecondColumn = styled.div`
     }
 `
 
-const afterPic = () => {
-    css`
-            position: absolute;
-            content: "";
-            right:-20px;
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            background-repeat: no-repeat;
-            padding: 0;
-    `
-}
-
 
 //доделать 
 const baseStyle = css`
@@ -82,7 +69,7 @@ export const FourthColumn = styled.div`
     align-items:flex-end;
     justify-content:space-between;
 
-    & :first-child {
+    & :first-of-type {
         position: relative;
         &:after{
             vertical-align: top;
@@ -90,7 +77,7 @@ export const FourthColumn = styled.div`
             ${baseStyle};
         }
     }
-    & :last-child {
+    & :last-of-type {
         position: relative;
         &:after{
             vertical-align: center;
@@ -119,10 +106,10 @@ export const WeatherCard = styled.div`
             justify-content: space-around;
             display: flex;
             flex-direction: column;
-            & :first-child{
+            & :first-of-type{
                font-size:1.5em;
             }
-            & :last-child{
+            & :last-of-type{
                 font-size:0.8em;   
                 color: rgb(102, 102, 102);
             }

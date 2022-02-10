@@ -6,7 +6,6 @@ import { Line } from 'react-chartjs-2';
 
 function TemperatureChart({ loading, chartData }) {
 
-    console.log(chartData)
     const [data, setData] = React.useState({
         labels: _.map(chartData, item => {
             return `${MONTH_S[new Date(item.date).getMonth()]}, ${new Date(item.date).getDate()}`

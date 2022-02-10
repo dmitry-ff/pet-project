@@ -9,10 +9,11 @@ export const UserData = {
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                pattern.draw('square', '#1f77b4'),
-                pattern.draw('circle', '#ff7f0e'),
+                pattern.draw('triangle', '#adbe41'),
+                pattern.draw('ring', '#9e73bb'),
+                pattern.draw('weave', '#17becf'),
                 pattern.draw('diamond', '#2ca02c'),
-                pattern.draw('zigzag-vertical', '#17becf'),
+                pattern.draw('zigzag-vertical', '#de215e'),
                 pattern.draw('box', 'rgb(255, 99, 132, 0.4)')
             ],
             borderColor: [
