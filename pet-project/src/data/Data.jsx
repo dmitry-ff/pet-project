@@ -1,16 +1,19 @@
+import pattern from 'patternomaly'
+
+
 export const UserData = {
+
     labels: ['Red', 'Blue', 'Yellow',],
     datasets: [
         {
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
+                pattern.draw('square', '#1f77b4'),
+                pattern.draw('circle', '#ff7f0e'),
+                pattern.draw('diamond', '#2ca02c'),
+                pattern.draw('zigzag-vertical', '#17becf'),
+                pattern.draw('box', 'rgb(255, 99, 132, 0.4)')
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
