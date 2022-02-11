@@ -19,23 +19,23 @@ const ChartsNav = styled.div`
 `;
 
 const AllCharts = () => {
-    return (
-        <>
-            <ChartsNav>
-                {
-                    _.map(CHART_NAMES, (item, index) => <NavLink
-                        style={({ isActive }) => ({
-                            display: "block",
-                            margin: "1rem 0",
-                            color: isActive ? "red" : ""
-                        })}
-                        key={index}
-                        to={item}>{item}</NavLink>)
-                }
-            </ChartsNav>
-            <Outlet />
-        </>
-    );
+  return (
+    <>
+      <ChartsNav>
+        {
+          _.map(CHART_NAMES, (item, index) => <NavLink
+            style={({ isActive }) => ({
+              display: "block",
+              margin: "1rem 0",
+              color: isActive ? "red" : ""
+            })}
+            key={index}
+            to={item}>{item}</NavLink>)
+        }
+      </ChartsNav>
+      <Outlet />
+    </>
+  );
 }
 
 
